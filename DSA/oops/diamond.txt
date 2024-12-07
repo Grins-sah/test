@@ -1,0 +1,7 @@
+when 2 instances of base class arre present in 
+
+        a
+    /       \ 
+b              c
+    \       /
+        d
