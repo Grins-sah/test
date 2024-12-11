@@ -1,6 +1,15 @@
 #include<iostream>
 #include<vector>
 using namespace std;
+/**
+ * bottle problem
+ * n = 12
+ * ex = 3
+ * rem = 0;
+ * div = 0
+ * rem2 = 0;
+ * 
+ */
 int result(int n,int ex,long long count1,int exp){
         count1+=n;
         int rem = n%ex;
@@ -16,5 +25,5 @@ int main(){
         int expt=0;
         long long count=0;
         int ans=result(12,3,count,expt);
-        return ans;
+        cout<< ans;
 }

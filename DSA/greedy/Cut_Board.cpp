@@ -1,59 +1,85 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <unordered_map>
-#include <unordered_set>
-using namespace std;
-void CutBoard(int m, int n, vector<int> xCut, vector<int> yCut)
-{
-    vector<pair<int, int>> row;
-    int ans = 0;
-    for (int i = 0; i < xCut.size(); i++)
-    {
-        row.push_back({xCut[i], i});
-    }
-    sort(row.begin(), row.end());
-
-    vector<pair<int, int>> col;
-    for (int i = 0; i < yCut.size(); i++)
-    {
-        col.push_back({yCut[i], i});
-    }
-    sort(col.begin(), col.end());
-
-    int jCut = 1;
-    int iCut = 1;
-    int i = row[row.size() - iCut].second;
-    int j = col[col.size() - jCut].second;
-    while (i >= 0 || j >= 0)
-    {
-        if (iCut <= row.size())
-            i = row[row.size() - iCut].second;
-        else
-            i = -1;
-        if (jCut <= col.size())
-            j = col[col.size() - jCut].second;
-        else
-            j = -1;
-        if (i >= 0 && j >= 0 && xCut[i] > yCut[j])
-        {
-            ans += jCut * xCut[i];
-            iCut++;
-        }
-        else if (i >= 0 && j >= 0 && xCut[i] == yCut[j])
-        {
-            ans += jCut * xCut[i];
-            iCut++;
-        }
-        else if (j >= 0)
-        {
-            ans += iCut * yCut[j];
-            jCut++;
-        }
-    }
-    cout << ans;
-}
-int main()
-{
-    CutBoard(4, 6, {2, 1, 4}, {2, 1, 3, 1, 4});
-}
+	#include <iostream>
+	#include<vector>
+	#include<algorithm>
+	using namespace std;
+	
+	int main() {
+		int t;
+		cin>> t;
+		for(int k=0;k<t;k++){
+			int m,n;
+			cin>>m>>n;
+			vector<int> v1;
+			for(int i=0;i<m-1;i++){
+				int x;
+				cin>>x;
+				v1.push_back(x);
+			}
+			vector<int> v2;
+	
+			for(int i=0;i<n-1;i++){
+				int x;
+				cin>>x;
+				v2.push_back(x);
+			}
+			int i = 0;
+			int j = 0;
+			int xCut = 1;
+			int yCut = 1;
+			sort(v1.begin(),v1.end());
+			sort(v2.begin(),v2.end());
+				reverse(v1.begin(),v1.end());
+			reverse(v2.begin(),v2.end());
+			int result = 0;
+			while(i<m-1 || j<n-1){
+				if(m>n){
+				if(j<n-1 && i<m-1 && v2[j]>=v1[i]){
+					result += v2[j]*xCut;
+					j++;
+					yCut++;
+				}else if(j<n-1 && i<m-1 &&v1[i]>v2[j]){
+					result+= v1[i]*yCut;
+					xCut++;
+					i++;
+				}else if(j<n-1){
+					result += v2[j]*xCut;
+					j++;
+					yCut++;
+					
+				}
+				else if(i<m-1){
+					result+= v1[i]*yCut;
+					xCut++;
+					i++;
+				}
+			}else{
+				if(j<n-1 && i<m-1 && v1[i]>=v2[j]){
+					result += v1[i]*yCut;
+					i++;
+					xCut++;
+				}else if(j<n-1 && i<m-1 &&v1[i]<v2[j]){
+					result += v2[j]*xCut;
+					j++;
+					yCut++;
+				}else if(j<n-1){
+					result += v2[j]*xCut;
+					j++;
+					yCut++;
+					
+				}
+				else if(i<m-1){
+					result+= v1[i]*yCut;
+					xCut++;
+					i++;
+				}
+				
+			}
+			}			
+			cout<<result;
+	
+			
+		}
+		// your code here
+	
+		return 0;
+	}
