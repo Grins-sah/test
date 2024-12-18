@@ -6,3 +6,4 @@
 5. eg :- fibonacci number
 6. Recursion + Memorization => (TOP DOWN DP)
 7. Tabulation => (Bottom UP DP)
+8. state of the dp is the parameter on which the subProblem repeats
