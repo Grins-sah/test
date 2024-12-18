@@ -18,7 +18,4 @@ int main(){
     ansCOMP=p*pow((1+(r/100)),t)-p;
     printf("The Simple interest is %f ...\n",ansSIP );
     printf("The Compound interest is %f ...\n",ansCOMP);
-
-
-
 }

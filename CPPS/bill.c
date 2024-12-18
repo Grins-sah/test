@@ -1,6 +1,7 @@
 #include<stdio.h>
 int main(){
     int unit;
+    printf("Enter the unit Consumed : ");
     scanf("%d",&unit);
     int ans=0;
     if(unit<=100){
@@ -20,6 +21,6 @@ int main(){
         ans+=100*7;
         ans+=(unit-250)*10;
     }
-    printf("\n%d",ans);
+    printf("\nthe bill for the unit consumed is : %d",ans);
     
 }
