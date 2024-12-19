@@ -20,7 +20,25 @@ int helper(int n,vector<int>& dp){
 int main(){
     int n;
     cin>>n;
-    vector<int> dp(n+1,-1);
-    cout<<helper(n,dp);
+    vector<int> dp(n+1,INT_MAX);
+    dp[n]=0;
+    for(int i=0;i<=n;i++){
+        int temp = i;
+        int ans=INT_MAX;
+        while(temp>0 && i>9){
+            int digit = temp%10;
+            if(digit!=0) ans = min(ans,dp[i-digit]);
+            temp/=10;
+        }
+        if(ans==INT_MAX) dp[i]=1;
+        else dp[i]=++ans;
+    }
+    /**
+     *     top to bottom method recursion solution
+     *     vector<int> dp1(n+1,-1);
+     *     cout<<helper(n,dp1);
+     */
+    
+    cout<<dp[n];
 
 }
