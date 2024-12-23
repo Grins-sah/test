@@ -8,7 +8,7 @@ int main(){
         ans=unit*3;
     }
     else if(unit<=150){
-        ans+=100*3;
+        ans+=100*3;:wq
         ans+=(unit-100)*4;
     }else if(unit<=250){
         ans+=100*3;

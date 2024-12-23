@@ -99,7 +99,7 @@ int main(){
         printf("\n");
     }
     printf("\n");
-	printf("The trnaspose is : \n");
+	printf("The transpose is : \n");
     for(int i=0;i<m;i++){
         for(int j=0;j<n;j++){
             printf("%d ",trans[i][j]);
