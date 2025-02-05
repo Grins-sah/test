@@ -49,14 +49,67 @@
 // fn sum(a:i32 ,b:i32)-> i32{
 //     return a+b;
 // }
+  
 
-fn main() {
-    let mut s1 = String::from("Hi there");
-    s1 = take_ownership(s1);
-    println!("{}",s1);
+// owner
+
+
+// fn main() {
+//     let mut s1 = String::from("Hi there");
+//     s1 = take_ownership(s1);
+//     println!("{}",s1);
     
+// }
+// fn take_ownership(some_string:String)-> String{
+//     println!("{}",some_string);
+//     return some_string;
+// }
+
+// 
+
+// borrower
+
+// fn main(){
+//     let mystring = String::from("hello rihana");
+//     takes_ownership(&mystring);
+//     println!("{}",mystring);
+
+// }
+// fn takes_ownership(some_string: &String) {
+//     println!("{}", some_string);  // some_string is borrowed and not moved
+// }
+
+
+
+// only one borrower => for hanky panky
+
+// fn main(){
+//     let mut s1:String = String::from ("Hello");
+//     // mutalbilty by function call
+
+//     update_str(&mut s1);
+//     // mutability in the main function
+//     let s2 = &mut s1;
+//     s2.push_str(" again");
+//     print!("{}",s1);
+// }
+// fn update_str(s:&mut String){
+//     s.push_str(" world");
+// }
+
+
+struct User{
+    active :bool,
+    username: String,
+    email:String,
+    sign_in_count:u32,
 }
-fn take_ownership(some_string:String)-> String{
-    println!("{}",some_string);
-    return some_string;
+fn main(){
+    let name :String  = String:from("Grins");
+    let user:User = User { 
+        active: (true), 
+        username:name, 
+        email: name
+        ,sign_in_count: (1) };
+
 }
