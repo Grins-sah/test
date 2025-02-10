@@ -1,0 +1,10 @@
+{
+    "github.copilot.editor.enableAutoCompletions": false,
+    "github.copilot.chat.fixTestFailure.enabled": false,
+    "files.associations": {
+        "*.sqlbook": "sql",
+        "*.ndjson": "jsonl",
+        "*.dbclient-js": "javascript",
+        "iostream": "cpp"
+    }
+}
