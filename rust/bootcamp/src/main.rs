@@ -105,11 +105,12 @@ struct User{
     sign_in_count:u32,
 }
 fn main(){
-    let name :String  = String:from("Grins");
-    let user:User = User { 
+    let name :String  = String::from("Grins");
+    let _user:User = User { 
         active: (true), 
-        username:name, 
+        username:name.clone(), 
         email: name
         ,sign_in_count: (1) };
+        print!("{}",_user.username);
 
 }
