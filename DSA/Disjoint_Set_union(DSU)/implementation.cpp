@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 using namespace std;
+// TC : log(*n)
 int find(vector<int>& v,int x){
     if(v[x]==x) return x;
     else{
