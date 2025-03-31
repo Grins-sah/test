@@ -1,10 +1,13 @@
-package hello_test
+package main
 
 import (
 	"fmt"
+
+	"example.com/greetings"
 )
 
 func main() {
-	fmt.Println("Hello world!")
-
+	// Get a greeting message and print it.
+	message := greetings.Hello("Gladys")
+	fmt.Println(message)
 }

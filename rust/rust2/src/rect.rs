@@ -11,3 +11,11 @@ impl Rect{
         println!("Static function")
     }
 }
+impl Rect{
+    pub fn new(width:f32,height:f32)->Rect{
+        Rect{
+            width,
+            height
+        }
+    }
+}
