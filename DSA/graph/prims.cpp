@@ -3,8 +3,8 @@ using namespace std;
 vector<set<pair<int,int>>> graph;
 int n,e,src;
 int prims(){
-    vector<vector<int>> m(n+1,vector<int>(2,INT_MAX));
-    m[src][0]=-1;
+    vector<vector<int>> m(n,vector<int>(2,INT_MAX));
+    m[src][0]=0;
     m[src][1]=src;
     priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>pq;
     unordered_set<int> s;
@@ -32,7 +32,7 @@ int prims(){
 }
 int main(){
     cin>>n>>e;
-    graph.resize(e);
+    graph.resize(n);
     for(int i = 0;i<e;i++){
         int a,b,wt;
         cin>>a>>b>>wt;
