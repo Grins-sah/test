@@ -3,7 +3,7 @@
 // one more approch of substr approch 
 #include<bits/stdc++.h>
 using namespace std;
-unordered_set<int> st;
+unordered_set<char> st;
 void permutation(string& s,string temp){
     int n = s.length();
     if(temp.length()>=n){
@@ -11,10 +11,10 @@ void permutation(string& s,string temp){
         return;
     }
     for(int i = 0;i<n;i++){
-        if(st.count(i)==0){
-            st.insert(i);
+        if(st.count(s[i])==0){
+            st.insert(s[i]);
             permutation(s,temp+s[i]);
-            st.erase(i);
+            st.erase(s[i]);
         }
     }
 }
@@ -37,8 +37,26 @@ void permutation_substr(string s,string temp){
         return;
     }
     for(int i = 0;i<n;i++){
-            
-            permutation_substr(s.substr(0,i)+s.substr(i+1),temp+s[i]);
+        permutation_substr(s.substr(0,i)+s.substr(i+1),temp+s[i]);
+    }
+}
+void permuatation_with_repeat(string& s,int i){
+    int n = s.length();
+    if(i>=n-1){
+        cout<<s<<endl;
+        return ;
+    }
+    unordered_set<char> stt;
+    for(int j = i;j<n;j++){  
+        if(stt.count(s[j])){
+            continue;
+        }
+        swap(s[i],s[j]);
+        stt.insert(s[i]);
+        permuatation_with_repeat(s,i+1);
+        swap(s[i],s[j]);
+
+
     }
 }
 int main(){
@@ -50,9 +68,10 @@ int main(){
         string s;
         cin>>s;
         st.clear();
-        permutation_substr(s,"");
-        permutation(s,"");
-        permutation(s,0);
+        permutation_substr(s,""); // substr methode
+        permutation(s,"");  // set methode of backtracking
+        permutation(s,0);   // swap without repeatation
+        permuatation_with_repeat(s,0); // swap with repeatation
     }
 
 }
