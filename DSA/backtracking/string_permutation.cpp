@@ -18,6 +18,18 @@ void permutation(string& s,string temp){
         }
     }
 }
+void permutation(string& s,int i){
+    int n = s.length();
+    if(i>=n-1){
+        cout<<s<<endl;
+        return;
+    }
+    for(int j = i;j<n;j++){
+        swap(s[j],s[i]);
+        permutation(s,i+1);
+        swap(s[i],s[j]);
+    }
+}
 void permutation_substr(string s,string temp){
     int n = s.length();
     if(n==0){
@@ -40,6 +52,7 @@ int main(){
         st.clear();
         permutation_substr(s,"");
         permutation(s,"");
+        permutation(s,0);
     }
 
 }
