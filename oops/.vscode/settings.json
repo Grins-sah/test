@@ -3,6 +3,11 @@
         "*.sqlbook": "sql",
         "*.ndjson": "jsonl",
         "*.dbclient-js": "javascript",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "atomic": "cpp",
+        "chrono": "cpp",
+        "iterator": "cpp",
+        "format": "cpp",
+        "ranges": "cpp"
     }
 }
