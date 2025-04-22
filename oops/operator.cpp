@@ -17,7 +17,7 @@ public:
         return A(real - a.real, img - a.img);
     }
 
-    A operator+(const A& a) const {
+    A operator+( A& a)  {
         return A(real + a.real, img + a.img);
     }
     A operator++(int) {
@@ -27,7 +27,7 @@ public:
         return temp;
     }
 
-    friend ostream& operator<<(ostream& out, const A& a) {
+    friend ostream& operator<<(ostream& out,const  A& a) {
         out << a.real << "+" << a.img << "i";
         return out;
     }

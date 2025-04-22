@@ -28,21 +28,21 @@ public:
     }
 };
 
-// int main() {
-//     Dog d;
-//     d.sound();
-//     Cat c;
-//     c.sound();
-//     return 0;
-// }
-
 int main() {
-    Animal* animal;
     Dog d;
-    animal = &d;
-    animal->sound();
+    d.sound(); // compile time 
     Cat c;
-    animal = &c;
-    animal->sound();
+    c.sound();
     return 0;
 }
+
+// int main() {
+//     Animal* animal;
+//     Dog d;
+//     animal = &d;
+//     animal->sound();   // runtime
+//     Cat c;
+//     animal = &c;
+//     animal->sound();
+//     return 0;
+// }
