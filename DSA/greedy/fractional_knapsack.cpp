@@ -14,7 +14,7 @@ int factionalKnapsack(vector<int> profit,vector<int> weights ,int n,int W){
         arr.push_back({profit[i],weights[i]});
     }
     sort(arr.begin(),arr.end(),cmp);
-    for(auto e le : arr){
+    for(auto ele : arr){
         cout<<ele.first<<" "<<ele.second<<endl;    
     }
     cout<<endl;

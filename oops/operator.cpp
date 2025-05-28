@@ -27,7 +27,7 @@ public:
         return temp;
     }
 
-    friend ostream& operator<<(ostream& out,const  A& a) {
+    friend ostream& operator<<(ostream& out,const  A a) {
         out << a.real << "+" << a.img << "i";
         return out;
     }
@@ -35,6 +35,13 @@ public:
 
 int main() {
     A a(10, 20), b(30, 10), c(80, 90);
+    int ele = 1;
+    int& ele_1 = ele;
+    ele_1++;
+    cout<<ele<<endl;
+    A d = a+b;
+    cout<<d<<endl;
+
     cout << a << endl;        // 10+20i
     cout << a + b << endl;    // 40+30i
     cout << a++ << endl;      // 10+20i (before increment)
