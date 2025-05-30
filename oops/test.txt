@@ -1,2 +1,0 @@
-this is the first line input in the file
-second line input in the file
