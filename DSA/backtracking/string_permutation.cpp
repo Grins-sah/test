@@ -68,10 +68,10 @@ int main(){
         string s;
         cin>>s;
         st.clear();
-        permutation_substr(s,""); // substr methode
-        permutation(s,"");  // set methode of backtracking
-        permutation(s,0);   // swap without repeatation
-        permuatation_with_repeat(s,0); // swap with repeatation
+        permutation_substr(s,"");       // substr methode
+        permutation(s,"");              // set methode of backtracking
+        permutation(s,0);               // swap without repeatation
+        permuatation_with_repeat(s,0);  // swap with repeatation
     }
 
 }
